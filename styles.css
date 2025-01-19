@@ -1,29 +1,131 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
+/* Resetting default styles for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body and Layout */
+body {
+    font-family: monospace;
+    background-color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Controls Section */
 .container {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
-#arrayContainer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 300px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    margin: 20px;
+.controls input,
+.controls select,
+.controls button {
+    background: rgba(255, 255, 255, 0.1);
+    color: black;
+    padding: 15px;
+    font-size: 18px;
+    font-family: monospace;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
+.controls button:hover,
+.controls input:focus,
+.controls select:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* Centered Graph Container */
+#arrayContainerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh; /* Height of the container */
+    width: 50%;   /* Responsive width */
+    max-width: 1700px; /* Maximum width */
+    margin-top: 20px;
+}
+
+/* Container for Bars (Array) */
+#arrayContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 90%;
+    gap: 2px; /* Small gap between bars */
+}
+
+/* Bar Styling */
 .bar {
-    margin: 1px;
-    background-color: #007bff;
-    transition: height 0.3s ease;
+    width: 130px;  /* Slightly larger width for better visibility */
+    background: #00d1b2;
+    border-radius: 3px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Number Inside Bar (Centered inside the bar) */
+.bar span {
+    position: absolute;
+    bottom: 8px; /* Numbers are inside and bottom-aligned */
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    transition: bottom 0.3s ease, font-size 0.3s ease;
+}
+
+/* Bar Hover Effects */
+.bar:hover {
+    background: brown;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.6);
+}
+
+.bar:hover span {
+    font-size: 16px;
+}
+
+/* Button Hover Effects */
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+/* Smooth hover effect on the bars */
+.bar {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease;
 }
