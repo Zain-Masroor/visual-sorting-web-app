@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Algorithm Visualizer</title>
+    <title>Sorting Visualizer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Sorting Visualizer</h1>
     <div class="container">
-        <h1>Sorting Algorithm Visualizer</h1>
         <div class="controls">
-            <input type="number" id="numberInput" placeholder="Enter a number">
-            <button id="addNumber">Add Number</button>
-            <button id="startSort">Start Sorting</button>
+            <input id="inputValue" type="text" placeholder="Enter number" />
+            <button id="addBtn">Add</button>
             <select id="algorithmSelect">
-                <option value="bubble">Bubble Sort</option>
-                <option value="selection">Selection Sort</option>
-                <option value="insertion">Insertion Sort</option>
-                <option value="merge">Merge Sort</option>
-                <option value="quick">Quick Sort</option>
+                <option value="bubble">Bubble</option>
+                <option value="selection">Selection</option>
+                <option value="insertion">Insertion</option>
+                <option value="quick">Quick</option>
             </select>
+            <button id="sortBtn">Sort</button>
+            <button id="resetBtn">Reset</button>
         </div>
-        <div id="arrayContainer"></div>
+        <div id="arrayContainerWrapper">
+            <div id="arrayContainer"></div>
+        </div>
     </div>
     <script src="backend.js"></script>
 </body>
